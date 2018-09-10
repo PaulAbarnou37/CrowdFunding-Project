@@ -19,11 +19,12 @@ mongoose
       moneyExpected: 10000,
       endDate: 12/03/2018,
       contributors: ["5b9681e995e9bc0db5d86e5b", ],
-      owner: {
-        type: Schema.Types.ObjectId,
-        ref: "User", 
-        required: true,
-      }},
+      // owner: {
+      //   type: Schema.Types.ObjectId,
+      //   ref: "User", 
+      //   required: true,
+      // }
+    },
     {
       name: "The Chicken Killer",
       shortDescription: "This app is supposed to kill chicken",
@@ -31,11 +32,12 @@ mongoose
       moneyExpected: 10000,
       endDate: 12/03/2018,
       contributors: ["5b9681e995e9bc0db5d86e5b", ],
-      owner: {
-        type: Schema.Types.ObjectId,
-        ref: "User", 
-        required: true,
-      }},
+      // owner: {
+      //   type: Schema.Types.ObjectId,
+      //   ref: "User", 
+      //   required: true,
+      // }
+    },
     {
       name: "The Chicken Killer",
       shortDescription: "This app is supposed to kill chicken",
@@ -43,11 +45,12 @@ mongoose
       moneyExpected: 10000,
       endDate: 12/03/2018,
       contributors: ["5b9681e995e9bc0db5d86e5b", ],
-      owner: {
-        type: Schema.Types.ObjectId,
-        ref: "User", 
-        required: true,
-      }},
+      // owner: {
+      //   type: Schema.Types.ObjectId,
+      //   ref: "User", 
+      //   required: true,
+      // }
+    },
     {
       name: "The Chicken Killer",
       shortDescription: "This app is supposed to kill chicken",
@@ -55,11 +58,12 @@ mongoose
       moneyExpected: 10000,
       endDate: 12/03/2018,
       contributors: ["5b9681e995e9bc0db5d86e5b", ],
-      owner: {
-        type: Schema.Types.ObjectId,
-        ref: "User", 
-        required: true,
-      }},
+      // owner: {
+      //   type: Schema.Types.ObjectId,
+      //   ref: "User", 
+      //   required: true,
+      // }
+    },
       
   ];
 
