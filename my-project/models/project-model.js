@@ -8,6 +8,7 @@ const projectSchema = new Schema({
   name: { type: String, required: true },
   shortDescription: { type: String, required: true },
   longDescription: { type: String, required: true },
+  pictureUrl: {type: String},
   moneyExpected: { type: Number, required: true },
   creationDate: { type: String, required: true },
   endDate: { type: String, required: true },
