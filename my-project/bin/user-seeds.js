@@ -47,8 +47,7 @@ mongoose
       lastName: "Ava DuVernay",
       pseudo: ["Storm Reid", "Oprah Winfrey", "Reese Witherspoon"],
       email: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMxNjQ5MTI3MV5BMl5BanBnXkFtZTgwMjQ2MTAyNDM@._V1_UX182_CR0,0,182,268_AL_.jpg",
-    },
-    
+    },  
   ];
 
 
@@ -58,3 +57,4 @@ mongoose
   })
   .catch(err => {
     console.log("Create FAILURE!! 💩", err);
+  });
