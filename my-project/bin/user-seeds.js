@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
-const User = require("../models/Movie.js");
+const User = require("../models/user-model.js");
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/lab-express-cinema', {useMongoClient: true})
+  .connect('mongodb://localhost/crowdfunding-project', {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
@@ -15,38 +15,26 @@ mongoose
     {
       firstName : "Paul",
       lastName: "Abarnou",
-      pseudo: ["Storm Reid", "Oprah Winfrey", "Reese Witherspoon"],
-      email: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMxNjQ5MTI3MV5BMl5BanBnXkFtZTgwMjQ2MTAyNDM@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      pseudo: "Le Tourangeaux",
+      email: "paulabarnou@letourangeau.com",
     },
     {
-      firstName : "A Wrinkle in Time",
-      lastName: "Ava DuVernay",
-      pseudo: ["Storm Reid", "Oprah Winfrey", "Reese Witherspoon"],
-      email: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMxNjQ5MTI3MV5BMl5BanBnXkFtZTgwMjQ2MTAyNDM@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      firstName : "John",
+      lastName: "Dimitroff",
+      pseudo: "The British",
+      email: "johndimitroff@thebritish.com",
     },
     {
-      firstName : "A Wrinkle in Time",
-      lastName: "Ava DuVernay",
-      pseudo: ["Storm Reid", "Oprah Winfrey", "Reese Witherspoon"],
-      email: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMxNjQ5MTI3MV5BMl5BanBnXkFtZTgwMjQ2MTAyNDM@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      firstName : "Manu",
+      lastName: "Jaldorau",
+      pseudo: "La Réunionnaise",
+      email: "manujaldorau@lareunionnaise.com",
     },
     {
-      firstName : "A Wrinkle in Time",
-      lastName: "Ava DuVernay",
-      pseudo: ["Storm Reid", "Oprah Winfrey", "Reese Witherspoon"],
-      email: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMxNjQ5MTI3MV5BMl5BanBnXkFtZTgwMjQ2MTAyNDM@._V1_UX182_CR0,0,182,268_AL_.jpg",
-    },
-    {
-      firstName : "A Wrinkle in Time",
-      lastName: "Ava DuVernay",
-      pseudo: ["Storm Reid", "Oprah Winfrey", "Reese Witherspoon"],
-      email: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMxNjQ5MTI3MV5BMl5BanBnXkFtZTgwMjQ2MTAyNDM@._V1_UX182_CR0,0,182,268_AL_.jpg",
-    },
-    {
-      firstName : "A Wrinkle in Time",
-      lastName: "Ava DuVernay",
-      pseudo: ["Storm Reid", "Oprah Winfrey", "Reese Witherspoon"],
-      email: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMxNjQ5MTI3MV5BMl5BanBnXkFtZTgwMjQ2MTAyNDM@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      firstName : "Mohammed",
+      lastName: "Zamama",
+      pseudo: "The Marrakchi",
+      email: "momozamama@themarrakchi.com",
     },  
   ];
 
