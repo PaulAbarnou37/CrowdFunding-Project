@@ -19,10 +19,11 @@ router.post("/process-signup", (req, res, next) => {
 
   User.create({firstName, lastName, email, encryptedPassword})
   .then(UserDoc => {
+    
     req.logIn(UserDoc, () => {
-    req.flash("success", "Sign Up success!");
-    res.redirect("/dashboard");
-  });
+      req.flash("success", "Signup success!");
+      res.redirect("/dashboard");
+    });
   })
   .catch(err => next(err));
 });
