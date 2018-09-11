@@ -2,6 +2,21 @@
 
 {{> flash_messages}} 
 
+<ul>
+  {{#each userProjects}}
+  <li>
+  {{this.projectName}}
+  <a href="/projects-list/{{this._id}}">See Project</a>
+
+  </li>
+  {{/each}}
+
+
+
+
+
+
+</ul>
 
 <button><a href="/start-a-project">Start a project</a></button>
 

@@ -21,7 +21,7 @@ let owner = req.user._id;
   Project.create({projectName, shortDescription, longDescription, pictureUrl, category, endDate, moneyExpected, owner})
   .then(UserDoc => {
     // req.flash("success", "Sign up success!");
-    res.redirect("/project-page.hbs")
+    res.redirect("/project-page")
   })
   .catch(err => next(err));
 });
