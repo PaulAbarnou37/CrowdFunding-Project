@@ -14,7 +14,7 @@ const userSchema = new Schema({
     unique: true,
     match: /^.+@.+\..+$/,
   },
-  // encryptedPassword: { type: String },
+  encryptedPassword: { type: String },
   moneyDonated: { type: [Number]},
   projectContributed: { type: [String]},
 }, {
