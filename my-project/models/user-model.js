@@ -7,7 +7,7 @@ const userSchema = new Schema({
   // document structure & rules
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
-  pictureUrl: {type: String, required: true},
+  // pictureUrl: {type: String, required: true},
   // pseudo: { type: String, required: true },
   email: {
     type: String,
