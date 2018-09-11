@@ -8,6 +8,9 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const session      = require('express-session');
+const MongoStore   = require('connect-mongo')(session);
+const flash        = require('connect-flash');
 
 const passportSetup = require("./config/passport/passport-setup.js")
 
@@ -46,7 +49,25 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
+app.use(session({
+  //"secret" should be a string that's different for every app
+  secret: "secret should be different for every app",
+  //"save Uninitialized" and "resave" are here just to avoid error messages
+  saveUninitialized: true,
+  resave: true,
+  //use "connect-mongo" to store session information inside MongoDB
+  store: new MongoStore({mongooseConnection: mongoose.connection})
+}));
+
+app.use(flash());
 passportSetup(app);
+
+app.use((req, res, next) => {
+  //makes flash messages accessible inside views
+  res.locals.messages = req.flash();
+  //you need this or your whole app won't work
+  next();
+});
 
 // default value for title local
 app.locals.title = 'LOGO';

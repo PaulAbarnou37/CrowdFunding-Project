@@ -27,6 +27,7 @@ router.post("/process-signup", (req, res, next) => {
 
   User.create({firstName, lastName, email, encryptedPassword})
   .then(UserDoc => {
+    req.flash("success", "Sign up success!");
     res.redirect("/")
   })
   .catch(err => next(err));
@@ -42,15 +43,18 @@ router.post("/process-login", (req, res, next) => {
 User.findOne({email: {$eq:email}})
 .then(userDoc => {
   if (!userDoc) {
+    req.flash("error", "incorrect email");
     res.redirect("/login");
     return;
   }
   const {encryptedPassword} = userDoc;
   if(!bcrypt.compareSync(originalPassword, encryptedPassword)){
+    req.flash("error", "password is wrong");
     res.redirect("/login");
     return;
   }
   req.logIn(userDoc, () => {
+    req.flash("success", "Log in success!");
     res.redirect("/");
   });
 })
