@@ -8,7 +8,11 @@ const Project = require("../models/project-model.js");
 
 //GET start a project page
 router.get("/start-a-project", (req, res, next) => {
+  if(req.user) {
   res.render("start-a-project.hbs");
+  } else{
+    res.redirect("/login");
+  }
 });
 
 router.post("/project-creation", (req, res, next) => {
@@ -17,7 +21,7 @@ let owner = req.user._id;
   Project.create({projectName, shortDescription, longDescription, pictureUrl, category, endDate, moneyExpected, owner})
   .then(UserDoc => {
     // req.flash("success", "Sign up success!");
-    res.redirect("/")
+    res.redirect("/project-page.hbs")
   })
   .catch(err => next(err));
 });

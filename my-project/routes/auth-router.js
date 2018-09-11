@@ -21,10 +21,17 @@ router.post("/process-signup", (req, res, next) => {
 
   User.create({firstName, lastName, email, encryptedPassword})
   .then(UserDoc => {
-    req.flash("success", "Sign up success!");
-    res.redirect("/")
+    
+    req.logIn(UserDoc, () => {
+      req.flash("success", "Signup success!");
+      res.redirect("/dashboard");
+    });
   })
   .catch(err => next(err));
+});
+
+router.get("/dashboard", (req, res, next) => {
+  res.render("dashboard.hbs")
 });
 
 //GET login page
@@ -49,7 +56,7 @@ User.findOne({email: {$eq:email}})
   }
   req.logIn(userDoc, () => {
     req.flash("success", "Log in success!");
-    res.redirect("/");
+    res.redirect("/dashboard");
   });
 })
   .catch(err => next(err));
