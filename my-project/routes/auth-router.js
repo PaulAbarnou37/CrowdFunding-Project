@@ -97,6 +97,12 @@ router.get("/projects-list/:projectid", (request,response,next)=>{
       })
 });
 
+router.post("/process-contribution", (req, res, next) => {
+  const {amount} 
+
+}
+)
+
 
 
 module.exports = router;
