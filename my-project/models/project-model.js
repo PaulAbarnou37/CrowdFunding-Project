@@ -5,20 +5,26 @@ const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
   // document structure & rules
-  name: { type: String, required: true },
-  shortDescription: { type: String, required: true },
+  projectName: { type: String, required: true },
+  shortDescription: { type: String, required: true, maxlength : 20 },
   longDescription: { type: String, required: true },
-  pictureUrl: {type: String},
+  pictureUrl: {type: String, required: true},
   moneyExpected: { type: Number, required: true },
-  // creationDate: { type: String, required: true },
+  moneyReceived: { type: Number, default: 0, },
   endDate: { type: Date, required: true },
   comments: { type: [String]},
-  contributors: { type: [String]},
-  // owner: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "User", 
-  //   required: true,
-  // },
+  contributors: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User", 
+      required: true,
+    }
+  ],
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: "User", 
+    required: true,
+  },
 }, {
   timestamps: true
 });
