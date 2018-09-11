@@ -16,7 +16,16 @@ const userSchema = new Schema({
     match: /^.+@.+\..+$/,
   },
   encryptedPassword: { type: String },
-  moneyDonated: [Number],
+  projectsContributed: [
+    {
+      amount: Number,
+      project: {
+        type: Schema.Types.ObjectId,
+        ref: "Project", 
+        required: true,
+      }
+    }
+  ]
 }, {
   // additional settings for Schema constructor function (class)
   timestamps: true,

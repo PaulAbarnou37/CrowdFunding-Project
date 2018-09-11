@@ -3,6 +3,17 @@
 <h2>{{projectData.longDescription}}</h2>
 <h2>{{projectData.shortDescription}}</h2>
 
+<form action="/process-contribution" method="POST">
+<label>
+$:
+<input type="number" name="amount"/>
+</label>
+<br/>
+
+<button>Contribute</button>
+</form>
+
+
 {{!-- <img src="{{projectsItem.imageUrl}}">
 
 <p>{{projectsItem.longDescription}}</p>

@@ -29,8 +29,17 @@ router.post("/process-signup", (req, res, next) => {
 });
 
 router.get("/dashboard", (req, res, next) => {
+  res.locals.userInfo = req.user;
+
+  Project.find({owner : { $eq: req.user._id } })
+  .then(projectsArray => {
+
+    res.locals.userProjects = projectsArray;
   res.render("dashboard.hbs")
+  })
+  .catch(err => next(err));
 });
+
 
 //GET login page
 router.get("/login", (req, res, next) => {
