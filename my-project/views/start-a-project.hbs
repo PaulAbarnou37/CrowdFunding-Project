@@ -1,20 +1,48 @@
 <h2>Start a Project</h2>
 
-
+<form action ="project-creation" method = "POST">
 <label>
 Project Name:
-<input type="text" name="name" placeholder="Project Name" />
+<input type="text" name="projectName" placeholder="The New Facebook" />
 </label>
 <br/>
 
 <label>
-  Project Image:
-  <input type="url" name="imageUrl" placeholder="Image URL"/>
+Short Description:
+<input type="text" name="shortDescription" placeholder="Please explain your project in 30 characters" />
 </label>
 <br/>
 
 <label>
-  Project Description:
-  <input type="text" name="longDescription" placeholder="Describe your project"/>
+Long Description:
+<input type="text" name="longDescription" placeholder="Please explain your project in more than 100 characters" />
 </label>
+<br/>
+
+<label>
+  Give your project a picture:
+  <input type="url" name="pictureUrl" placeholder="Copy your image URL here"/>
+</label>
+<br/>
+
+<label>
+  What is the category of your project:
+  <input type="text" name="category" placeholder="Write your project's category"/>
+</label>
+<br/>
+
+<label>
+  What is the end date of your project?
+  <input type="date" name="endDate" placeholder="Select the end date"/>
+</label>
+<br/>
+
+<label>
+  How much money you expect to gather?
+  <input type="number" name="moneyExpected" placeholder="See big!"/>
+</label>
+<br/>
+
+  <button>Create My Project</button>
+</form>
 <br/>

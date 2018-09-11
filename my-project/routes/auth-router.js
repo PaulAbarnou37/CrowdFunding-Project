@@ -8,12 +8,6 @@ const User = require("../models/user-model.js");
 
 
 
-//GET start a project page
-router.get("/start-a-project", (req, res, next) => {
-  res.render("start-a-project.hbs");
-});
-
-
 //GET signup page
 router.get("/signup", (req, res, next) => {
   res.render("auth-views/signup.hbs")
@@ -59,6 +53,15 @@ User.findOne({email: {$eq:email}})
   });
 })
   .catch(err => next(err));
+});
+
+router.get("/logout", (req, res, next) => {
+  // "req.logOut()" is a Passport method that removes the user ID from session
+  req.logOut();
+
+  // save a flash message to display in the HOME page
+  req.flash("success", "Logged out successfully!");
+  res.redirect("/");
 });
 
 

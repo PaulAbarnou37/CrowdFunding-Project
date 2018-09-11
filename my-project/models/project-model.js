@@ -13,6 +13,7 @@ const projectSchema = new Schema({
   moneyReceived: { type: Number, default: 0, },
   endDate: { type: Date, required: true },
   comments: { type: [String]},
+  category: { type: [String]},
   contributors: [
     {
       type: Schema.Types.ObjectId,
