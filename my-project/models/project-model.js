@@ -10,15 +10,15 @@ const projectSchema = new Schema({
   longDescription: { type: String, required: true },
   pictureUrl: {type: String},
   moneyExpected: { type: Number, required: true },
-  creationDate: { type: String, required: true },
-  endDate: { type: String, required: true },
+  // creationDate: { type: String, required: true },
+  endDate: { type: Date, required: true },
   comments: { type: [String]},
   contributors: { type: [String]},
-  owner: {
-    type: Schema.Types.ObjectId,
-    ref: "User", 
-    required: true,
-  },
+  // owner: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "User", 
+  //   required: true,
+  // },
 }, {
   timestamps: true
 });
