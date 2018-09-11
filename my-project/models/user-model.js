@@ -7,14 +7,14 @@ const userSchema = new Schema({
   // document structure & rules
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
-  pseudo: { type: String, required: true },
+  // pseudo: { type: String, required: true },
   email: {
     type: String,
     required: true,
     unique: true,
     match: /^.+@.+\..+$/,
   },
-  // encryptedPassword: { type: String },
+  encryptedPassword: { type: String },
   moneyDonated: { type: [Number]},
   projectContributed: { type: [String]},
 }, {

@@ -54,9 +54,12 @@ app.locals.title = 'LOGO';
 const index = require('./routes/index');
 app.use('/', index);
 
+const projectRouter = require("./routes/project-router.js");
+app.use("/", projectRouter);
 
-const projectRouter = require('./routes/project-router.js');
-app.use('/', projectRouter);
+const authRouter = require("./routes/auth-router.js");
+app.use("/", authRouter);
+
 
 
 module.exports = app;
