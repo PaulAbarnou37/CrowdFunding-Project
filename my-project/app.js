@@ -9,7 +9,7 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
-// const passportSetup = require("./config/passport/passport-setup.js")
+const passportSetup = require("./config/passport/passport-setup.js")
 
 
 mongoose
@@ -46,7 +46,7 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-
+passportSetup(app);
 
 // default value for title local
 app.locals.title = 'LOGO';
