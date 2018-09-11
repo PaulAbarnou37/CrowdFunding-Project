@@ -9,6 +9,8 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
+// const passportSetup = require("./config/passport/passport-setup.js")
+
 
 mongoose
   .connect('mongodb://localhost/crowdfunding-project', {useNewUrlParser: true})
@@ -56,6 +58,9 @@ app.use('/', index);
 
 const projectRouter = require("./routes/project-router.js");
 app.use("/", projectRouter);
+
+const authRouter = require("./routes/auth-router.js");
+app.use("/", authRouter);
 
 
 module.exports = app;
