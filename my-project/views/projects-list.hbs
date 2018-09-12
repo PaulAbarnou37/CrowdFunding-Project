@@ -2,20 +2,20 @@
 {{!-- <div class="project-list"> --}}
 <div class="allprojects-box">
 
-<ul> 
-    {{#each projectsArray}}
+<ul>
+   {{#each projectsArray}}
 
-  <li>
-      {{!-- <a href= "/projects-list{{this._id}}">{{this.projectName}}</a> --}}
-    <a href= "/projects-list/{{this._id}}"><img class="list-image" src="{{this.pictureUrl}}" /></a>
-        <h5><a href= "/projects-list/{{this._id}}">{{this.projectName}}</a></h5>
+ <li>
+     {{!-- <a href= "/projects-list{{this._id}}">{{this.projectName}}</a> --}}
+   <a href= "/projects-list/{{this._id}}"><img class="list-image" src="{{this.pictureUrl}}" /></a>
+       <h5><a href= "/projects-list/{{this._id}}">{{this.projectName}}</a></h5>
 
-    {{!-- <h4>{{this.shortDescription}}</h4> --}}
-  </li>
-    
-  {{/each}}
-  </ul>
-  </div>
-  
+   {{!-- <h4>{{this.shortDescription}}</h4> --}}
+ </li>
 
-  {{!-- </div> --}}
+ {{/each}}
+ </ul>
+ </div>
+
+
+ {{!-- </div> --}}

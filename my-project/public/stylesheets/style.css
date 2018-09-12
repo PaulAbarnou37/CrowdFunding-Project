@@ -25,6 +25,8 @@ li {
 h5 {
   text-transform: uppercase; }
 
+.allprojects-box {
+  position: relative; }
 
 .list-image {
   width: 245px;
