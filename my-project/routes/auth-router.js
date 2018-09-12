@@ -30,12 +30,20 @@ router.post("/process-signup", (req, res, next) => {
 
 router.get("/dashboard", (req, res, next) => {
   res.locals.userInfo = req.user;
-
   Project.find({owner : { $eq: req.user._id } })
   .then(projectsArray => {
-
     res.locals.userProjects = projectsArray;
-  res.render("dashboard.hbs")
+    User.find({_id: { $eq: req.user._id }})
+    // .populate(path: projectsContributed.project)
+    .populate("projectsContributed.project")
+    .then(usersArray => {
+      res.send(usersArray);
+    // console.log(usersArray);
+    res.locals.userAllProfile = usersArray;
+    res.locals.userContributions = usersArray.projectsContributed;
+
+    res.render("dashboard.hbs")
+  })
   })
   .catch(err => next(err));
 });
@@ -105,7 +113,7 @@ router.post("/process-contribution", (req, res, next) => {
   // USER UPDATE ARRAY WITH INFO
   User.findByIdAndUpdate(
     {_id: userId},
-    {$push: {projectsContributed: {amount, projectId}}})
+    {$push: {projectsContributed: {amount, project: projectId}}})
     .then(userDoc => {
       Project.findByIdAndUpdate(
         {_id: projectId},

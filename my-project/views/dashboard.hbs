@@ -1,7 +1,8 @@
-<h2>My Dashboard</h2>
+<h1>My Dashboard</h1>
 
 {{> flash_messages}} 
 
+<h2>My Projects</h2>
 <ul>
   {{#each userProjects}}
   <li>
@@ -10,13 +11,22 @@
 
   </li>
   {{/each}}
-
-
-
-
-
-
 </ul>
+
+<h2>My Contributions</h2>
+<ul>
+  {{#each userContributions}}
+  <li>
+  {{this.amount}}
+  <a href="/projects-list/{{this._id}}">See Project</a>
+
+  </li>
+  {{/each}}
+</ul>
+
+
+
+
 
 <button><a href="/start-a-project">Start a project</a></button>
 
