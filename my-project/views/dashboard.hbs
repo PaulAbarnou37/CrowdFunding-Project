@@ -2,14 +2,26 @@
 
 {{> flash_messages}} 
 
+<p>My projects</p>
 <ul>
   {{#each userProjects}}
   <li>
   {{this.projectName}}
   <a href="/projects-list/{{this._id}}">See Project</a>
-
   </li>
   {{/each}}
+</ul>
+
+<p>My contributions</p>
+<ul>
+  {{#each userContributions}}
+  <li>
+  {{this.userContributions}}
+  <a href="/projects-list/{{this._id}}">See Project</a>
+  </li>
+  {{/each}}
+</ul>
+
 
 
 

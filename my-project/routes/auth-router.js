@@ -33,11 +33,17 @@ router.get("/dashboard", (req, res, next) => {
 
   Project.find({owner : { $eq: req.user._id } })
   .then(projectsArray => {
-
     res.locals.userProjects = projectsArray;
   res.render("dashboard.hbs")
   })
   .catch(err => next(err));
+
+User.find({projectsContributed: {$eq: req.user._id} })
+  .then(projectsContributedArray => {
+    res.locals.userContributions = projectsContributedArray;
+    res.render("dashboard.hbs")
+  })
+  .catch(err => next(err))
 });
 
 
@@ -98,11 +104,31 @@ router.get("/projects-list/:projectid", (request,response,next)=>{
 });
 
 router.post("/process-contribution", (req, res, next) => {
-  const { amount, projectId } = req.body;
-  const userId, 
-  res.send(req.body);
-  console.log(projectName);
+  // res.send(req.body);
+  let {amount, projectId} = req.body;
+  amount = Number(amount);
+  const userId = req.user._id ;
+  // USER UPDATE ARRAY WITH INFO
+  User.findByIdAndUpdate(
+    {_id: userId},
+    {$push: {projectsContributed: {amount, projectId}}})
+    .then(userDoc => {
+      Project.findByIdAndUpdate(
+        {_id: projectId},
+        {$inc: {moneyReceived: amount}, $push: {contributors: userId}
+      })
+      .then(userDoc => {
+        console.log(projectId)
+        res.redirect(`/projects-list/${projectId}`);
+      })
+    })
+    .catch(err => {
+      // ----> 'HERE WE CAPTURE THE ERROR'
+      console.log('There is a Failure', err)
+    });
 });
+  
+  
 
 
 
