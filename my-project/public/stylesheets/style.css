@@ -1,11 +1,40 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 14px "Arial", Helvetica, Arial, sans-serif; }
 
 .progress {
   width: 300px; }
 
 a {
-  color: #00B7FF; }
+  color: black;
+  text-decoration: none; }
+
+ul {
+  display: flex;
+  flex-wrap: wrap; }
+
+li {
+  width: 23%;
+  list-style-type: none; }
+
+nav {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%; }
+
+h5 {
+  text-transform: uppercase; }
+
+h1 {
+  font-size: 100px;
+  font-style: italic; }
+
+.allprojects-box {
+  position: relative; }
+
+.list-image {
+  width: 245px;
+  height: 185px; }
 
 /*# sourceMappingURL=style.css.map */
