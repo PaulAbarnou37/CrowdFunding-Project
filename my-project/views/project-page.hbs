@@ -1,13 +1,23 @@
 <h2>{{projectData.projectName}}</h2>
-<img src=“{{projectData.pictureUrl}}” alt=“”>
+<img src="{{projectData.pictureUrl}}" alt="">
 <p>{{projectData.longDescription}}</p>
+<p>{{projectData.endDate}}</p>
 
-<p>{{projectData.moneyReceived}} out of {{projectData.moneyExpected}}</p>
+
+<div class="project-info">
+
+<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{moneyLeft}}" aria-valuemin="0" aria-valuemax="100" style="width: {{moneyLeft}}%"></div>
+</div>
+
+Still {{timeLeft}} days before the end date!
+
+</div>
 
 
 <form action="/process-contribution" method="POST">
 <label>
-$:
+Fuel This Project:
 <input type="number" name="amount"/>
 </label>
 <input type="hidden" name="projectId" value="{{projectData._id}}">

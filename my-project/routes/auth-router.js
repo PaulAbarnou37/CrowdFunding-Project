@@ -93,6 +93,8 @@ router.get("/logout", (req, res, next) => {
 });
 
 
+
+
 router.get("/projects-list/:projectid", (request,response,next)=>{
   const { projectid } = request.params; // params pour recup ce quil ya dans l'url
   Project.findOne({_id : { $eq: projectid } })
@@ -101,6 +103,12 @@ router.get("/projects-list/:projectid", (request,response,next)=>{
         console.log(data);
         // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API'
         response.locals.projectData = data;
+        response.locals.moneyLeft = (data.moneyReceived / data.moneyExpected)*10 ;
+        var countDownDate = new Date(`${data.endDate}`).getTime();
+        var newCount = countDownDate/1000/60/60/24;
+        var now = new Date().getTime();
+        var newNow = now/1000/60/60/24;
+        response.locals.timeLeft = Math.floor(newCount - newNow);
         // to show result on browser and not the terminal: 
         // response.send(data.body.artists.items);
         response.render("project-page.hbs");
