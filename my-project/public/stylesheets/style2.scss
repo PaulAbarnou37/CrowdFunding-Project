@@ -1,24 +1,27 @@
 * {
-  font-family:  'Oswald', sans-serif;
+  font-family:  ‘Oswald’, sans-serif;
   padding: 0px;
   margin: 0px;
-}
-
-body {
+ }
+ 
+ body {
   top: 100px;
-
-}
-
-h1 {
+ }
+ 
+ p {
+  font-family: ‘Dosis’, sans-serif;
+ }
+ 
+ h1 {
   padding: 20px 0px;
-}
-
-h2{
-  font-family:  'Oswald', sans-serif;
-
-}
-
-nav {
+ }
+ 
+ h2{
+  font-family:  ‘Oswald’, sans-serif;
+ 
+ }
+ 
+ nav {
   background-color: white;
   height: 100px;
   width: 100vw;
@@ -27,47 +30,70 @@ nav {
   justify-content: space-between;
   position: fixed;
   z-index: 10;
-}
-
-nav ul {
+ }
+ 
+ nav ul {
   padding-right: 20px
-}
-
-nav ul li {
+ }
+ 
+ nav ul li {
   text-decoration-style: none;
   display: inline-block;
   margin : 17px;
-}
-
-nav ul li a {
+ }
+ 
+ nav ul li a {
   text-decoration: none;
   font-size:22px;
   font-weight: 100;
   color: black
-}
-
-.progress {
+ }
+ 
+ .progress {
   width: 300px;
-}
-
-.img-big {
+ }
+ 
+ .img-big {
   width: 600px;
   height: auto;
-}
-
-a {
+ }
+ 
+ /* a {
   color: #00B7FF;
-}
-
-.latest-projects {
+ } */
+ 
+ .latest-projects {
   margin: 0 30px;
-}
-
-.latest-projects img {
+ }
+ 
+ .latest-projects img {
   width: 254px;
   height: 185px;
-}
-
-.latest-projects-box{
+ }
+ 
+ .latest-projects-box{
   display: flex;
-}
+ }
+ 
+ /* JOHN IMPORT */
+ 
+ 
+ .allprojects-box ul li a {
+ color: black;
+ text-decoration: none; }
+ 
+ .allprojects-box ul {
+ display: flex;
+ flex-wrap: wrap; }
+ 
+ .allprojects-box ul li {
+ width: 23%;
+ list-style-type: none; }
+ 
+ h5 {
+ text-transform: uppercase; }
+ 
+ 
+ .list-image {
+ width: 245px;
+ height: 185px; }
