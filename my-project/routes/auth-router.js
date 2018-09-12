@@ -98,10 +98,11 @@ router.get("/projects-list/:projectid", (request,response,next)=>{
 });
 
 router.post("/process-contribution", (req, res, next) => {
-  const {amount} 
-
-}
-)
+  const { amount, projectId } = req.body;
+  const userId, 
+  res.send(req.body);
+  console.log(projectName);
+});
 
 
 
