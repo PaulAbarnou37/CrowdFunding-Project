@@ -1,14 +1,21 @@
 <h2>Live Projects</h2>
+{{!-- <div class="project-list"> --}}
+<div class="allprojects-box">
 
-<ul> 
-  {{#each projectsArray}}
-  <li>
-    <h3>{{this.name}}</h3>
-    {{!-- <img src="{{this.imageUrl}}" /> --}}
-    <h4>{{this.shortDescription}}</h4>
-    <a href="/projects-list/{{this._id}}">See Project</a>
-  </li>
-    
-  
-  {{/each}}
-  </ul>
+<ul>
+   {{#each projectsArray}}
+
+ <li>
+     {{!-- <a href= "/projects-list{{this._id}}">{{this.projectName}}</a> --}}
+   <a href= "/projects-list/{{this._id}}"><img class="list-image" src="{{this.pictureUrl}}" /></a>
+       <h5><a href= "/projects-list/{{this._id}}">{{this.projectName}}</a></h5>
+
+   {{!-- <h4>{{this.shortDescription}}</h4> --}}
+ </li>
+
+ {{/each}}
+ </ul>
+ </div>
+
+
+ {{!-- </div> --}}

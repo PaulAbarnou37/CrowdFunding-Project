@@ -55,9 +55,9 @@ nav ul li a {
   height: auto;
 }
 
-a {
+/* a {
   color: #00B7FF;
-}
+} */
 
 .latest-projects {
   margin: 0 30px;
@@ -71,3 +71,26 @@ a {
 .latest-projects-box{
   display: flex;
 }
+
+/* JOHN IMPORT */
+
+
+.allprojects-box ul li a {
+ color: black;
+ text-decoration: none; }
+
+ .allprojects-box ul {
+ display: flex;
+ flex-wrap: wrap; }
+
+ .allprojects-box ul li {
+ width: 23%;
+ list-style-type: none; }
+
+h5 {
+ text-transform: uppercase; }
+
+
+.list-image {
+ width: 245px;
+ height: 185px; }
