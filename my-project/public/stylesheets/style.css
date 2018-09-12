@@ -1,9 +1,14 @@
-body {
-  padding: 50px;
-  font: 14px "Arial", Helvetica, Arial, sans-serif; }
+* {
+  font-family: 'Oswald', sans-serif;
+  padding: 0px;
+  margin: 0px; }
 
 .progress {
   width: 300px; }
+
+.img-big {
+  width: 600px;
+  height: auto; }
 
 a {
   color: black;
@@ -17,21 +22,9 @@ li {
   width: 23%;
   list-style-type: none; }
 
-nav {
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  width: 100%; }
-
 h5 {
   text-transform: uppercase; }
 
-h1 {
-  font-size: 100px;
-  font-style: italic; }
-
-.allprojects-box {
-  position: relative; }
 
 .list-image {
   width: 245px;

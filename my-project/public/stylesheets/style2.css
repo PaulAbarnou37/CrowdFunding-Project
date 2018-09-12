@@ -1,0 +1,59 @@
+* {
+  font-family: 'Oswald', sans-serif;
+  padding: 0px;
+  margin: 0px; }
+
+body {
+  top: 100px; }
+
+h1 {
+  padding: 20px 0px; }
+
+h2 {
+  font-family: 'Oswald', sans-serif; }
+
+nav {
+  background-color: white;
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 10; }
+
+nav ul {
+  padding-right: 20px; }
+
+nav ul li {
+  text-decoration-style: none;
+  display: inline-block;
+  margin: 17px; }
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 100;
+  color: black; }
+
+.progress {
+  width: 300px; }
+
+.img-big {
+  width: 600px;
+  height: auto; }
+
+a {
+  color: #00B7FF; }
+
+.latest-projects {
+  margin: 0 30px; }
+
+.latest-projects img {
+  width: 254px;
+  height: 185px; }
+
+.latest-projects-box {
+  display: flex; }
+
+/*# sourceMappingURL=style2.css.map */
