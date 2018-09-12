@@ -97,6 +97,33 @@ router.get("/projects-list/:projectid", (request,response,next)=>{
       })
 });
 
+router.post("/process-contribution", (req, res, next) => {
+  let {amount, projectId} = req.body;
+  amount = Number(amount);
+  const userId = req.user._id ;
+  console.log(amount);
+  // USER UPDATE ARRAY WITH INFO
+  User.findByIdAndUpdate(
+    {_id: userId},
+    {$push: {projectsContributed: {amount, projectId}}})
+    .then(userDoc => {
+      Project.findByIdAndUpdate(
+        {_id: projectId},
+        {$inc: {moneyReceived: amount}, $push: {contributors: userId}
+      })
+      .then(userDoc => {
+        console.log(projectId)
+        res.redirect(`/projects-list/${projectId}`);
+      })
+    })
+    .catch(err => {
+      // ----> 'HERE WE CAPTURE THE ERROR'
+      console.log('There is a Failure', err)
+    });
+});
+  // res.send(req.body)
+  
+
 
 
 module.exports = router;

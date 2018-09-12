@@ -20,8 +20,9 @@ router.post("/project-creation", (req, res, next) => {
 let owner = req.user._id;
   Project.create({projectName, shortDescription, longDescription, pictureUrl, category, endDate, moneyExpected, owner})
   .then(UserDoc => {
+    // const {projectId} = req.body._id;
     // req.flash("success", "Sign up success!");
-    res.redirect("/project-page")
+    res.redirect(`/projects-list/`)
   })
   .catch(err => next(err));
 });
