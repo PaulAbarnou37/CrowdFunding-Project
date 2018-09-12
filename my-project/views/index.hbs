@@ -1,3 +1,33 @@
-<h2>Home Page</h2>
+<h1>Featured Project</h1>
+<hr>
 
-{{> flash_messages}} 
+<h2>Name of a project</h2>
+
+<img class="img-big" src="https://quotefancy.com/media/wallpaper/1600x900/4675624-Sonny-Franco-Quote-The-best-project-you-ll-ever-work-on-is-you.jpg" alt="">
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+
+
+<section>
+  <h1>Latest Project</h1>
+<div class="latest-projects-box">
+<div class="latest-projects">
+    <img src="{{resultOne.pictureUrl}}" alt="">
+    <h3>{{resultOne.projectName}}</h3>
+    <p>{{resultOne.shortDescription}}</p>
+</div>
+<div class="latest-projects">
+    <img src="{{resultTwo.pictureUrl}}" alt="">
+    <h3>{{resultTwo.projectName}}</h3>
+    <p>{{resultTwo.shortDescription}}</p>
+</div>
+<div class="latest-projects">
+    <img src="{{resultThree.pictureUrl}}" alt="">
+    <h3>{{resultThree.projectName}}</h3>
+    <p>{{resultThree.shortDescription}}</p>
+</div>
+
+</div>
+
+</section>
+
