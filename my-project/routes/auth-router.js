@@ -39,7 +39,6 @@ router.get("/dashboard", (req, res, next) => {
     .then(usersArray => {
       // res.send(usersArray);
     // console.log(usersArray);
-    // res.locals.userAllProfile = usersArray;
     res.locals.userContributions = usersArray[0].projectsContributed;
 
     res.render("dashboard.hbs")
@@ -128,6 +127,7 @@ router.post("/process-contribution", (req, res, next) => {
       })
       .then(userDoc => {
         console.log(projectId)
+        req.flash("success", "contribution processed successfully!")
         res.redirect(`/projects-list/${projectId}`);
       })
     })

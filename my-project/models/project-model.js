@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
+const moment = require("moment");
+
 
 const projectSchema = new Schema({
   // document structure & rules
@@ -28,6 +30,10 @@ const projectSchema = new Schema({
   },
 }, {
   timestamps: true
+});
+
+projectSchema.virtual("getGoodDate").get(function(){
+  return moment(this.createdAt).format("DD MMMM YYYY")
 });
 
 const Project = mongoose.model("Project", projectSchema);

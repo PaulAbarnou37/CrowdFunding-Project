@@ -6,8 +6,7 @@
 <ul>
   {{#each userProjects}}
   <li>
-  {{this.projectName}}
-  <a href="/projects-list/{{this._id}}">See Project</a>
+  <a href= "/projects-list{{this._id}}">{{this.projectName}}</a>
   </li>
   {{/each}}
 </ul>
@@ -17,17 +16,17 @@
 <ul>
   {{#each userContributions}}
   <li>
- <p> You contributed $ {{this.amount}} to {{this.project.projectName}} on {{this.project.createdAt}}</p>
-  <a href="/projects-list/{{this._id}}">See Project</a>
+  <p>You contributed ${{this.amount}} to <a href="/projects-list{{this._id}}">{{this.project.projectName}}</a> on {{this.project.getGoodDate}}</p>
+
 
   </li>
   {{/each}}
 </ul>
 
 
+<br/>
 
 
+<button><a href="/start-a-project">Start a new project</a></button>
 
-<button><a href="/start-a-project">Start a project</a></button>
 
-<button><a href="/my-contributions">My contributions</a></button>

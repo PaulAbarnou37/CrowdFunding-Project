@@ -1,7 +1,9 @@
-<h2>{{projectData._id}}</h2>
 <h2>{{projectData.projectName}}</h2>
-<h2>{{projectData.longDescription}}</h2>
-<h2>{{projectData.shortDescription}}</h2>
+<img src=“{{projectData.pictureUrl}}” alt=“”>
+<p>{{projectData.longDescription}}</p>
+
+<p>{{projectData.moneyReceived}} out of {{projectData.moneyExpected}}</p>
+
 
 <form action="/process-contribution" method="POST">
 <label>
@@ -12,18 +14,10 @@ $:
 <br/>
 
 <button>Contribute</button>
+
+<br/>
+{{> flash_messages}} 
 </form>
 
 
-{{!-- <img src="{{projectsItem.imageUrl}}">
-
-<p>{{projectsItem.longDescription}}</p>
-
-<p>{{projectsItem.moneyExpected}}</p>
-
-<p>{{projectsItem.endDate}}</p>
-
-<p>{{projectsItem.comments}}</p>
-
-<p>{{projectsItem.contributors}}</p> --}}
 
