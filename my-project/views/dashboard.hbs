@@ -17,8 +17,8 @@
 <ul>
   {{#each userContributions}}
   <li>
-  {{this.amount}}
-  <a href="/projects-list/{{this._id}}">See Project</a>
+  <p>You contributed {{this.amount}} to {{this.project.projectName}} on {{this.project.getGoodDate}}   <a href="/projects-list/{{this.project._id}}">See Project</a> </p>
+
 
   </li>
   {{/each}}

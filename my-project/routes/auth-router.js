@@ -37,10 +37,9 @@ router.get("/dashboard", (req, res, next) => {
     // .populate(path: projectsContributed.project)
     .populate("projectsContributed.project")
     .then(usersArray => {
-      res.send(usersArray);
+      // res.send(usersArray);
     // console.log(usersArray);
-    res.locals.userAllProfile = usersArray;
-    res.locals.userContributions = usersArray.projectsContributed;
+    res.locals.userContributions = usersArray[0].projectsContributed;
 
     res.render("dashboard.hbs")
   })
