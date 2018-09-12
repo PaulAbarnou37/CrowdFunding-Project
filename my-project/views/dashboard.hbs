@@ -1,8 +1,8 @@
-<h2>My Dashboard</h2>
+<h1>My Dashboard</h1>
 
 {{> flash_messages}} 
 
-<p>My projects</p>
+<h2>My Projects</h2>
 <ul>
   {{#each userProjects}}
   <li>
@@ -12,12 +12,14 @@
   {{/each}}
 </ul>
 
-<p>My contributions</p>
+
+<h2>My Contributions</h2>
 <ul>
   {{#each userContributions}}
   <li>
-  {{this.userContributions}}
+ <p> You contributed $ {{this.amount}} to {{this.project.projectName}} on {{this.project.createdAt}}</p>
   <a href="/projects-list/{{this._id}}">See Project</a>
+
   </li>
   {{/each}}
 </ul>
@@ -25,10 +27,6 @@
 
 
 
-
-
-
-</ul>
 
 <button><a href="/start-a-project">Start a project</a></button>
 
