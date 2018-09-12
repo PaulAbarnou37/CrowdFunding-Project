@@ -1,25 +1,22 @@
+@charset "UTF-8";
 * {
-  font-family:  'Oswald', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  ;
   padding: 0px;
-  margin: 0px;
-}
+  margin: 0px; }
 
 body {
-  top: 100px;
-}
+  top: 100px; }
 
 p {
-  font-family: 'Dosis', sans-serif;
-}
+  font-family: 'Dosis', sans-serif; }
 
 h1 {
-  padding: 20px 0px;
-}
+  padding: 20px 0px; }
 
-h2{
-  font-family:  'Oswald', sans-serif;
-
-}
+h2 {
+  font-family: 'Oswald', sans-serif;
+  ; }
 
 nav {
   background-color: white;
@@ -29,71 +26,60 @@ nav {
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  z-index: 10;
-}
+  z-index: 10; }
 
 nav ul {
-  padding-right: 20px
-}
+  padding-right: 20px; }
 
 nav ul li {
   text-decoration-style: none;
   display: inline-block;
-  margin : 17px;
-}
+  margin: 17px; }
 
 nav ul li a {
   text-decoration: none;
-  font-size:22px;
+  font-size: 22px;
   font-weight: 100;
-  color: black
-}
+  color: black; }
 
 .progress {
-  width: 300px;
-}
+  width: 300px; }
 
 .img-big {
   width: 600px;
-  height: auto;
-}
+  height: auto; }
 
 /* a {
   color: #00B7FF;
-} */
-
+ } */
 .latest-projects {
-  margin: 0 30px;
-}
+  margin: 0 30px; }
 
 .latest-projects img {
   width: 254px;
-  height: 185px;
-}
+  height: 185px; }
 
-.latest-projects-box{
-  display: flex;
-}
+.latest-projects-box {
+  display: flex; }
 
 /* JOHN IMPORT */
-
-
 .allprojects-box ul li a {
- color: black;
- text-decoration: none; }
+  color: black;
+  text-decoration: none; }
 
- .allprojects-box ul {
- display: flex;
- flex-wrap: wrap; }
+.allprojects-box ul {
+  display: flex;
+  flex-wrap: wrap; }
 
- .allprojects-box ul li {
- width: 23%;
- list-style-type: none; }
+.allprojects-box ul li {
+  width: 23%;
+  list-style-type: none; }
 
 h5 {
- text-transform: uppercase; }
-
+  text-transform: uppercase; }
 
 .list-image {
- width: 245px;
- height: 185px; }
+  width: 245px;
+  height: 185px; }
+
+/*# sourceMappingURL=style2.css.map */
