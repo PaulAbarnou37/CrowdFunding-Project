@@ -11,22 +11,27 @@
 
 
 {{#each userProjects}}
+<div>
 <ul>
-
-
-  <li><img src="{{this.pictureUrl}}" height="185px" width ="245px" /></li>
-  <li>{{this.projectName}}</li>
-  <li>{{this.shortDescription}}</li>
-  <li><a href="/projects-list/{{this._id}}">See Details</a></li>
-
-{{/each}}
+  <div class="block-img-content">
+    <li><img src="{{this.pictureUrl}}" height="185px" width ="245px" /></li>
+    <div class="text-content">
+      <li>{{this.projectName}}</li>
+      <li>{{this.shortDescription}}</li>
+      <li><a href="/projects-list/{{this._id}}">See Details</a></li>
+    </div>
+  </div>
 </ul>
+</div>
+{{/each}}
   
-
+</div>
 <div class="my-contributions">
 <h2  style= 'padding: 30px 0px'>My Contributions</h2>
+
+ {{#each userContributions}}
 <ul>
-  {{#each userContributions}}
+ 
   <li>
   <p>You contributed ${{this.amount}} to <a href="/projects-list/{{this._id}}">{{this.project.projectName}}</a> on {{this.project.getCreatedAt}}</p>
 

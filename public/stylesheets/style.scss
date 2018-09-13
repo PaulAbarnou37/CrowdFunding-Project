@@ -250,21 +250,25 @@ text-decoration: none;
   padding: 20px 0px;
 }
 
-.each-project {
+.block-img-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 350px;
+}
+
+.text-content{
+  margin-left: 20px;
+}
+
+.block-img-content li {
   list-style: none;
 }
 
-.each-project li {
-  padding-left: 10px;
+.block-img-content li img {
+  width: 70px;
+  height: 70px;
 }
 
-.each-project li img {
-  height: 70px;
-  width: 70px;
-}
+
 
 footer {
   padding-top: 13px;
@@ -306,3 +310,25 @@ footer {
 .btn-color-dd {
   background-color: black;
 }
+
+.sign-up-form {
+  padding: 175px 550px;
+  text-align: center;
+  
+}
+
+.signupform {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px 0;
+}
+
+.signup-input {
+  width: 300px;
+}
+
+.success-message {
+  color: chartreuse; }
+ 
+ .error-message {
+  color: crimson; }
