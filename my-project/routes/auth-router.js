@@ -108,7 +108,7 @@ router.get("/projects-list/:projectid", (request,response,next)=>{
         console.log(data);
         // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API'
         response.locals.projectData = data;
-        response.locals.moneyLeft = (data.moneyReceived / data.moneyExpected)*100 ;
+        response.locals.moneyLeft = (data.moneyReceived / data.moneyExpected) * 100 ;
         var countDownDate = new Date(`${data.endDate}`).getTime();
         var newCount = countDownDate/1000/60/60/24;
         var now = new Date().getTime();

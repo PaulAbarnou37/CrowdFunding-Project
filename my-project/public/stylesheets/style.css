@@ -53,9 +53,16 @@ a {
 .latest-projects {
   margin: 0 30px; }
 
+.latest-projects a h3 {
+  text-decoration: none; }
+
 .latest-projects img {
   width: 254px;
-  height: 185px; }
+  height: 185px;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 100;
+  color: black; }
 
 .latest-projects-box {
   display: flex; }
@@ -146,8 +153,92 @@ h5 {
   justify-content: center;
   align-items: center; }
 
+.start-project:hover {
+  background-color: black;
+  color: white; }
+
+.start-project a {
+  font-size: 30px;
+  text-decoration: none; }
+
 .bigcontent-header {
   display: flex;
   justify-content: space-between; }
+
+.startproject-btn button {
+  height: 50px;
+  width: 230px;
+  text-align: center; }
+
+.field-length {
+  width: 300px; }
+
+.create-my-btn {
+  height: 50px;
+  width: 300px;
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px; }
+
+.startproject-form {
+  width: 335px;
+  height: 765;
+  border: 2px solid black;
+  border-radius: 5px; }
+
+.all-form-page {
+  text-align: center;
+  padding: 150px 550px; }
+
+.long-description {
+  height: 100px; }
+
+.start-pro-text {
+  padding: 20px 0px; }
+
+.each-project {
+  display: flex;
+  align-items: center;
+  list-style: none; }
+
+.each-project li {
+  padding-left: 10px; }
+
+.each-project li img {
+  height: 70px;
+  width: 70px; }
+
+footer {
+  padding-top: 13px;
+  height: 50px;
+  text-align: center;
+  color: white;
+  background-color: black;
+  margin: 0 0; }
+
+.project-page-all {
+  padding: 150px 200px;
+  display: flex;
+  justify-content: center; }
+
+.content-project-page img {
+  width: 500px; }
+
+.project-info {
+  margin-top: 120px;
+  margin-left: 30px;
+  padding: 20px 30px;
+  border: 2px solid black;
+  border-radius: 5px; }
+
+.btn-contribute {
+  width: 300px;
+  height: 40px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px; }
 
 /*# sourceMappingURL=style.css.map */

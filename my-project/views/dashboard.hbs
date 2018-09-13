@@ -9,12 +9,14 @@
 <h2 style= 'padding: 30px 0px'>My Projects</h2>
 {{!-- <div class="project-list"> --}}
 
-<ul>
+<ul class="each-project">
   {{#each userProjects}}
-  <li>
-  <a href= "/projects-list/{{this._id}}"><img src="{{this.pictureUrl}}" height="185px" width ="245px" /></a>
-  <a href= "/projects-list/{{this._id}}">{{this.projectName}}</a>
-  </li>
+  <li><img src="{{this.pictureUrl}}" height="185px" width ="245px" /></li>
+  <div>
+  <li>{{this.projectName}}</li>
+  <li>{{this.shortDescription}}</li>
+  <li><a href="/projects-list/{{this._id}}">See Details</a></li>
+  </div>
   {{/each}}
 </ul>
 </div>
@@ -36,8 +38,9 @@
 <br/>
 </div>
 
-
+<div class="startproject-btn">
 <button><a href="/start-a-project">Start a new project</a></button>
+</div>
 
 </section>
 

@@ -13,29 +13,34 @@
 </div>
 
 {{!-- bigcontent-header --}}
+<a href="/start-a-project">
 <div class="start-project">
-<a href="/start-a-project">Start a Project</a>
+Start a Project
 </div>
+</a>
 </div>
 
 {{!-- headerhp --}}
 
   <h1>Latest Project</h1>
 <div class="latest-projects-box">
-<div class="latest-projects">
+<div class="latest-projects"><a href="./projects-list/{{resultOne._id}}">
     <img src="{{resultOne.pictureUrl}}" alt="">
     <h3>{{resultOne.projectName}}</h3>
     <p>{{resultOne.shortDescription}}</p>
+    </a>
 </div>
-<div class="latest-projects">
+<div class="latest-projects"><a href="./projects-list/{{resultTwo._id}}">
     <img src="{{resultTwo.pictureUrl}}" alt="">
     <h3>{{resultTwo.projectName}}</h3>
     <p>{{resultTwo.shortDescription}}</p>
+    </a>
 </div>
-<div class="latest-projects">
+<div class="latest-projects"><a href="./projects-list/{{resultThree._id}}">
     <img src="{{resultThree.pictureUrl}}" alt="">
     <h3>{{resultThree.projectName}}</h3>
     <p>{{resultThree.shortDescription}}</p>
+    </a>
 </div>
 
 </div>
