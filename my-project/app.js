@@ -16,7 +16,7 @@ const passportSetup = require("./config/passport/passport-setup.js")
 
 
 mongoose
-  .connect('mongodb://localhost/crowdfunding-project', {useNewUrlParser: true})
+  .connect(process.env.MONGODB_URI, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -51,7 +51,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 app.use(session({
   //"secret" should be a string that's different for every app
-  secret: "secret should be different for every app",
+  secret: process.env.sessionSecret,
   //"save Uninitialized" and "resave" are here just to avoid error messages
   saveUninitialized: true,
   resave: true,

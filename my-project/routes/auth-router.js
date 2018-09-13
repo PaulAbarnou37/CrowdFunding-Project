@@ -100,55 +100,7 @@ router.get("/logout", (req, res, next) => {
 
 
 
-router.get("/projects-list/:projectid", (request,response,next)=>{
-  const { projectid } = request.params; // params pour recup ce quil ya dans l'url
-  Project.findOne({_id : { $eq: projectid } })
-      .then(data => {
-        console.log('MY DATAAAAAAAAA');
-        console.log(data);
-        // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API'
-        response.locals.projectData = data;
-        response.locals.moneyLeft = (data.moneyReceived / data.moneyExpected) * 100 ;
-        var countDownDate = new Date(`${data.endDate}`).getTime();
-        var newCount = countDownDate/1000/60/60/24;
-        var now = new Date().getTime();
-        var newNow = now/1000/60/60/24;
-        response.locals.timeLeft = Math.floor(newCount - newNow);
-        // to show result on browser and not the terminal: 
-        // response.send(data.body.artists.items);
-        response.render("project-page.hbs");
-      })
-      .catch(err => {
-        // ----> 'HERE WE CAPTURE THE ERROR'
-        console.log('There is a Failure', err)
-      })
-});
 
-router.post("/process-contribution", (req, res, next) => {
-  // res.send(req.body);
-  let {amount, projectId} = req.body;
-  amount = Number(amount);
-  const userId = req.user._id ;
-  // USER UPDATE ARRAY WITH INFO
-  User.findByIdAndUpdate(
-    {_id: userId},
-    {$push: {projectsContributed: {amount, project: projectId}}})
-    .then(userDoc => {
-      Project.findByIdAndUpdate(
-        {_id: projectId},
-        {$inc: {moneyReceived: amount}, $push: {contributors: userId}
-      })
-      .then(userDoc => {
-        console.log(projectId)
-        req.flash("success", "contribution processed successfully!")
-        res.redirect(`/projects-list/${projectId}`);
-      })
-    })
-    .catch(err => {
-      // ----> 'HERE WE CAPTURE THE ERROR'
-      console.log('There is a Failure', err)
-    });
-});
   
   
 
