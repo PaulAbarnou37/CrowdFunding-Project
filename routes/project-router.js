@@ -61,12 +61,17 @@ router.get("/projects-list/:projectid", (request,response,next)=>{
         response.locals.timeLeft = Math.floor(newCount - newNow);
         if (data.moneyReceived > data.moneyExpected){
           data.moneyReceived = data.moneyExpected
-
         };
-
+        Comment.find({projectId: {$eq: projectid}})
+        .populate("commentWriter")
+        .then(allcommentsInfo =>{
+          response.locals.allComments = allcommentsInfo;
+          // response.send(allcommentsInfo)
+        response.render("project-page.hbs");
+        })
         // to show result on browser and not the terminal: 
         // response.send(data.body.artists.items);
-        response.render("project-page.hbs");
+        
       })
       .catch(err => {
         // ----> 'HERE WE CAPTURE THE ERROR'
@@ -102,27 +107,22 @@ router.post("/process-contribution", (req, res, next) => {
 
 router.post("/process-comment", (req, res, next) => {
   const {commentContent, projectId} = req.body;
-  let commentWriter = req.user._id;
 
-  // let commentProject = req.project._id;
-  Comment.create({commentContent, commentWriter, projectId})
+  let writerFirstName = req.user.firstName;
+  let writerLastName = req.user.lastName;
+
+  Comment.create({commentContent, commentWriter:{firstName: writerFirstName, lastName: writerLastName}, projectId})
     .then(myComment => {
+      res.locals.commentsInfo = myComment;
 
       Project.findByIdAndUpdate(
         projectId,
         {$push: {comments: myComment._id}}
       )
       .then( projectDoc => {
-      
-
-
-
-
-
-
-        console.log( projectDoc );
-        res.send(projectDoc);
-        res.locals.comments
+        // console.log( projectDoc );
+        // res.send(projectDoc);
+        // res.locals.comments
         res.redirect(`/projects-list/${projectId}`);
       })
     })

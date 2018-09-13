@@ -35,6 +35,25 @@ Fuel This Project:
 </div>
 
 </div>
+
+{{!-- SHOW THE COMMENT --}}
+
+<ul>
+{{#each allComments}}
+  <li><p>{{this.commentWriter.[0].firstName}}</p></li>
+  <li><p>{{this.commentWriter.[0].lastName}}</p></li>
+{{/each}}
+</ul>
+
+
+
+{{!-- SHOW THE COMMENT --}}
+
+
+
+
+
+
 <form action="/process-comment" method="POST">
   <label>
    Comment:

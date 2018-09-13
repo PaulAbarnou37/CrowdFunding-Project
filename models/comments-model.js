@@ -8,11 +8,10 @@ const moment = require("moment");
 const commentSchema = new Schema({
   
   commentContent: { type: String, required: true },
-  commentWriter: {
-    type: Schema.Types.ObjectId,
-    ref: "User", 
-    required: true,
-  },
+  commentWriter: [{
+    firstName: String,
+    lastName: String, 
+  }],
   projectId: {
       type: Schema.Types.ObjectId,
       ref: "Project", 
