@@ -1,0 +1,301 @@
+* {
+  font-family:  'Oswald', sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  top: 100px;
+
+}
+
+h1 {
+  padding: 20px 0px;
+}
+
+h2{
+  font-family:  'Oswald', sans-serif;
+
+}
+
+nav {
+  background-color: white;
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 10;
+  padding: 30px 300px;
+  border-bottom: 2px solid grey;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+nav ul li {
+  text-decoration-style: none;
+  display: inline-block;
+  margin : 17px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size:22px;
+  font-weight: 100;
+  color: black
+}
+
+.progress {
+  width: 300px;
+}
+
+.img-big {
+  width: 600px;
+  height: auto;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.latest-projects {
+  margin: 0 30px;
+}
+
+.latest-projects a h3 {
+  text-decoration: none;
+}
+
+.latest-projects img {
+  width: 254px;
+  height: 185px;
+  text-decoration: none;
+  font-size:22px;
+  font-weight: 100;
+  color: black
+}
+
+.latest-projects-box{
+  display: flex;
+}
+
+.headerhp{
+  padding: 150px 200px;
+  width: 100%;
+}
+
+.bigbox-header {
+  width: 100%;
+}
+
+.main-content {
+  width: 600px;
+}
+
+
+ 
+ 
+ .list-image {
+  width: 245px;
+  height: 185px; }
+
+  // John Import 
+
+  .allprojects-box ul li a {
+    color: black;
+    text-decoration: none; }
+   
+  .allprojects-box ul {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+  }
+   
+  .allprojects-box ul li {
+    width: 23%;
+    list-style-type: none; }
+   
+   h5 {
+    text-transform: uppercase; }
+   
+   
+   .list-image {
+    width: 245px;
+    height: 185px; }
+
+    .livepro {
+    padding: 200px 70px ;
+    }
+
+    #text-livepro {
+      padding-bottom: 10px;
+      padding-left: 50px;
+    }
+
+    .login-form {
+      padding: 150px 200px;
+      display:flex;
+      justify-content: center;
+    }
+
+    .login-content{
+      height: auto;
+      width: 300px;
+      display: flex;
+      justify-content: center;
+    }
+
+    label {
+      padding: 15px 0;
+    }
+
+    .dashboard-page {
+      padding: 200px 300px;
+      border-radius: 2px;
+    }
+
+    .whatsup{
+      color: white;
+      background-color: black;
+      padding: 30px 300px;
+      border: 2px solid black;
+    border-radius: 25px;
+}
+
+.my-everything{
+  display: flex;
+  justify-content: center; 
+}
+
+.my-project{
+  width: 400px;
+}
+
+h5 {
+  width: 245px;
+}
+
+.start-project {
+  width: 300px;
+  height: 300px;
+  margin-top:50px;
+  border: 2px solid grey;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-project:hover {
+  background-color: black;
+  color: white;
+}
+
+.start-project a {
+  font-size: 30px;
+text-decoration: none;
+}
+
+
+.bigcontent-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.startproject-btn button {
+  height: 50px;
+  width: 230px;
+  text-align: center;
+}
+
+.field-length {
+  width: 300px;
+}
+
+.create-my-btn {
+  height: 50px;
+  width: 300px;
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.startproject-form {
+  width: 335px;
+  height: 765;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.all-form-page {
+  text-align: center;
+  padding: 150px 550px;
+}
+
+.long-description {
+  height: 100px;
+}
+
+.start-pro-text {
+  padding: 20px 0px;
+}
+
+.each-project {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.each-project li {
+  padding-left: 10px;
+}
+
+.each-project li img {
+  height: 70px;
+  width: 70px;
+}
+
+footer {
+  padding-top: 13px;
+  height: 50px;
+  text-align: center;
+  color: white;
+  background-color: black;
+  margin: 0 0;
+}
+
+.project-page-all {
+  padding: 150px 200px;
+  display: flex; 
+  justify-content: center;
+}
+
+.content-project-page img {
+  width: 500px;
+}
+
+.project-info {
+  margin-top: 120px;
+  margin-left: 30px;
+  padding: 20px 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.btn-contribute {
+  width: 300px;
+  height: 40px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+}

@@ -1,0 +1,67 @@
+<div class="project-page-all">
+
+<div class="content-project-page">
+<h2>{{projectData.projectName}}</h2>
+<p style="font-style: italic">Created by </p>
+<p>{{projectData.shortDescription}}</p>
+<img src="{{projectData.pictureUrl}}" alt="">
+<p>{{projectData.longDescription}}</p>
+</div>
+
+<div class="project-info">
+ 
+
+<p> Still <span style="font-style: bold">{{timeLeft}}</span> days before the end date!</p>
+
+<p>${{projectData.moneyReceived}} out of ${{projectData.moneyExpected}}</p>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{moneyLeft}}" aria-valuemin="0" aria-valuemax="100" style="width: {{moneyLeft}}%"></div>
+</div>
+
+<form action="/process-contribution" method="POST">
+<label>
+Fuel This Project:
+<input type="number" name="amount"/>
+</label>
+<input type="hidden" name="projectId" value="{{projectData._id}}">
+<br/>
+
+<button class="btn-contribute">Contribute</button>
+
+<br/>
+{{> flash_messages}} 
+</form>
+</div>
+
+</div>
+
+<p>BLAH<p>
+  <p>BLAH<p>
+    <p>BLAH<p>
+
+<p>BLAH<p>
+  <p>BLAH<p>
+    <p>BLAH<p>
+
+<p>BLAH<p>
+  <p>BLAH<p>
+    <p>BLAH<p>
+
+
+<form action="/process-comment" method="POST">
+  <label>
+   Comment:
+    <input type="String" name="commentContent"/>
+  </label>
+  <input type="hidden" name="projectId" value="{{projectData._id}}">
+  <br/>
+
+  <button>Comment</button>
+
+  <br/>
+  {{> flash_messages}} 
+</form>
+
+
+
