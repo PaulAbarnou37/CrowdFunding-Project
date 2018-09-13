@@ -35,11 +35,16 @@ router.get("/dashboard", (req, res, next) => {
     res.locals.userProjects = projectsArray;
     User.find({_id: { $eq: req.user._id }})
     // .populate(path: projectsContributed.project)
+    
     .populate("projectsContributed.project")
     .then(usersArray => {
+      res.locals.userMe = usersArray[0].firstName;
       // res.send(usersArray);
     // console.log(usersArray);
     res.locals.userContributions = usersArray[0].projectsContributed;
+    
+    
+    
 
     res.render("dashboard.hbs")
   })
@@ -103,7 +108,7 @@ router.get("/projects-list/:projectid", (request,response,next)=>{
         console.log(data);
         // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API'
         response.locals.projectData = data;
-        response.locals.moneyLeft = (data.moneyReceived / data.moneyExpected)*10 ;
+        response.locals.moneyLeft = (data.moneyReceived / data.moneyExpected)*100 ;
         var countDownDate = new Date(`${data.endDate}`).getTime();
         var newCount = countDownDate/1000/60/60/24;
         var now = new Date().getTime();

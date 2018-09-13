@@ -1,5 +1,8 @@
-<h2>Live Projects</h2>
-{{!-- <div class="project-list"> --}}
+<section class="livepro"> 
+
+<h2 id="text-livepro" >Live Projects</h2>
+<hr>
+{{!-- <section class="project-list"> --}}
 <div class="allprojects-box">
 
 <ul> 
@@ -8,7 +11,8 @@
   <li>
       {{!-- <a href= "/projects-list{{this._id}}">{{this.projectName}}</a> --}}
     <a href= "/projects-list/{{this._id}}"><img class="list-image" src="{{this.pictureUrl}}" /></a>
-        <h5><a href= "/projects-list/{{this._id}}">{{this.projectName}}</a></h5>
+        <h5 style="padding: 15px 0px;"><a href= "/projects-list/{{this._id}}">{{this.projectName}}</a></h5>
+        <p style="width: 245px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
 
     {{!-- <h4>{{this.shortDescription}}</h4> --}}
   </li>
@@ -16,6 +20,7 @@
   {{/each}}
   </ul>
   </div>
+  </section>
   
 
-  {{!-- </div> --}}
+  {{!-- </section> --}}

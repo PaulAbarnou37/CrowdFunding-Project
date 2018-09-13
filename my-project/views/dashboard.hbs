@@ -1,8 +1,12 @@
-<h2>My Dashboard</h2>
+<section class="dashboard-page">
+<div class="whatsup">
+<h2>What's up {{userMe}}?</h2>
+</div>
+<div class="my-everything">
 
 {{> flash_messages}} 
-
-<h2>My Projects</h2>
+<div class="my-project">
+<h2 style= 'padding: 30px 0px'>My Projects</h2>
 {{!-- <div class="project-list"> --}}
 
 <ul>
@@ -13,23 +17,28 @@
   </li>
   {{/each}}
 </ul>
+</div>
 
-
-<h2>My Contributions</h2>
+<div class="my-contributions">
+<h2  style= 'padding: 30px 0px'>My Contributions</h2>
 <ul>
   {{#each userContributions}}
   <li>
-  <p>You contributed ${{this.amount}} to <a href="/projects-list{{this._id}}">{{this.project.projectName}}</a> on {{this.project.getGoodDate}}</p>
+  <p>You contributed ${{this.amount}} to <a href="/projects-list/{{this._id}}">{{this.project.projectName}}</a> on {{this.project.getCreatedAt}}</p>
 
 
   </li>
   {{/each}}
 </ul>
+</div>
 {{!-- </div> --}}
 
 <br/>
+</div>
 
 
 <button><a href="/start-a-project">Start a new project</a></button>
+
+</section>
 
 

@@ -32,8 +32,12 @@ const projectSchema = new Schema({
   timestamps: true
 });
 
-projectSchema.virtual("getGoodDate").get(function(){
+projectSchema.virtual("getCreatedAt").get(function(){
   return moment(this.createdAt).format("DD MMMM YYYY")
+});
+
+projectSchema.virtual("getEndDate").get(function(){
+  return moment(this.endDate).format("DD MMMM YYYY")
 });
 
 const Project = mongoose.model("Project", projectSchema);
