@@ -92,7 +92,8 @@ a {
 
 .allprojects-box ul li {
   width: 23%;
-  list-style-type: none; }
+  list-style-type: none;
+  margin-bottom: 30px; }
 
 h5 {
   text-transform: uppercase; }
@@ -199,6 +200,7 @@ h5 {
 
 .each-project {
   display: flex;
+  flex-direction: column;
   align-items: center;
   list-style: none; }
 
@@ -240,5 +242,8 @@ footer {
   color: white;
   font-size: 20px;
   border-radius: 5px; }
+
+.btn-color-dd {
+  background-color: black; }
 
 /*# sourceMappingURL=style.css.map */

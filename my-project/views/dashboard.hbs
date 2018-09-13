@@ -9,17 +9,19 @@
 <h2 style= 'padding: 30px 0px'>My Projects</h2>
 {{!-- <div class="project-list"> --}}
 
-<ul class="each-project">
-  {{#each userProjects}}
+
+{{#each userProjects}}
+<ul>
+
+
   <li><img src="{{this.pictureUrl}}" height="185px" width ="245px" /></li>
-  <div>
   <li>{{this.projectName}}</li>
   <li>{{this.shortDescription}}</li>
   <li><a href="/projects-list/{{this._id}}">See Details</a></li>
-  </div>
-  {{/each}}
+
+{{/each}}
 </ul>
-</div>
+  
 
 <div class="my-contributions">
 <h2  style= 'padding: 30px 0px'>My Contributions</h2>

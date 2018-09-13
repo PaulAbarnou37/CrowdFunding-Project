@@ -19,8 +19,20 @@
     <li><a href="/projects-list">Live Projects</a></li>
     <li><img src="https://image.ibb.co/mGaJqU/Crapfounder.png" alt=""></li>
 {{#if currentUser}}
-        <li><a href="/dashboard">My Dashboard</a></li>
-        <li><a href="/logout">Log Out</a></li>
+
+
+{{!-- button DROPDOWN --}}
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle btn-color-dd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    My Account
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="/dashboard">My Dashboard</a>
+    <a class="dropdown-item" href="/settings">Settings</a>
+  </div>
+</div>
+{{!-- Button dropdown END --}}
+<li><a href="/logout">Log Out</a></li>
       {{else}}
         <li><a href="/signup">Sign Up</a></li>
         <li><a href="/login">Log In</a></li>
