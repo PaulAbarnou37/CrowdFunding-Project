@@ -10,10 +10,13 @@
 
 <div class="project-info">
  
+<h3>More Information</h3>
 
-<p> Still <span style="font-style: bold">{{timeLeft}}</span> days before the end date!</p>
+<p> Still <span style="text-decoration:underline">{{timeLeft}} days</span> before the end date!</p>
 
 <p>${{projectData.moneyReceived}} out of ${{projectData.moneyExpected}}</p>
+
+<p>{{contributors}} contributions so far!</p>
 
 <div class="progress">
   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{moneyLeft}}" aria-valuemin="0" aria-valuemax="100" style="width: {{moneyLeft}}%"></div>
@@ -40,8 +43,10 @@ Fuel This Project:
 
 <ul>
 {{#each allComments}}
-  <li><p>{{this.commentWriter.[0].firstName}}</p></li>
+  <li><h5>{{this.commentWriter.[0].firstName}}</h5></li>
   <li><p>{{this.commentWriter.[0].lastName}}</p></li>
+  <li><p>{{this.commentContent}}</p></li>
+  
 {{/each}}
 </ul>
 

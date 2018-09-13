@@ -24,6 +24,7 @@ router.get("/start-a-project", (req, res, next) => {
 router.post("/project-creation", (req, res, next) => {
   const {projectName, shortDescription, longDescription, pictureUrl, category, endDate, moneyExpected} = req.body;
 let owner = req.user._id;
+
   Project.create({projectName, shortDescription, longDescription, pictureUrl, category, endDate, moneyExpected, owner})
   .then(UserDoc => {
     // const {projectId} = req.body._id;
@@ -49,15 +50,15 @@ router.get("/projects-list/:projectid", (request,response,next)=>{
   const { projectid } = request.params; // params pour recup ce quil ya dans l'url
   Project.findOne({_id : { $eq: projectid } })
       .then(data => {
-        console.log('MY DATAAAAAAAAA');
-        console.log(data);
         // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API'
         response.locals.projectData = data;
+        const contributors = data.contributors.length;
+        response.locals.contributors = contributors;
         response.locals.moneyLeft = (data.moneyReceived / data.moneyExpected) * 100 ;
-        var countDownDate = new Date(`${data.endDate}`).getTime();
-        var newCount = countDownDate/1000/60/60/24;
-        var now = new Date().getTime();
-        var newNow = now/1000/60/60/24;
+        const countDownDate = new Date(`${data.endDate}`).getTime();
+        const newCount = countDownDate/1000/60/60/24;
+        const now = new Date().getTime();
+        const newNow = now/1000/60/60/24;
         response.locals.timeLeft = Math.floor(newCount - newNow);
         if (data.moneyReceived > data.moneyExpected){
           data.moneyReceived = data.moneyExpected
@@ -65,7 +66,9 @@ router.get("/projects-list/:projectid", (request,response,next)=>{
         Comment.find({projectId: {$eq: projectid}})
         .populate("commentWriter")
         .then(allcommentsInfo =>{
+          
           response.locals.allComments = allcommentsInfo;
+          console.log(allcommentsInfo);
           // response.send(allcommentsInfo)
         response.render("project-page.hbs");
         })
@@ -94,7 +97,6 @@ router.post("/process-contribution", (req, res, next) => {
         {$inc: {moneyReceived: amount}, $push: {contributors: userId}
       })
       .then(userDoc => {
-        console.log(projectId)
         req.flash("success", "contribution processed successfully!")
         res.redirect(`/projects-list/${projectId}`);
       })

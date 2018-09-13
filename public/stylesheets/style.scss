@@ -133,13 +133,10 @@ a {
     height: 185px; }
 
     .livepro {
-    padding: 200px 70px ;
+    padding: 200px 150px ;
     }
 
-    #text-livepro {
-      padding-bottom: 10px;
-      padding-left: 50px;
-    }
+ 
 
     .login-form {
       padding: 150px 200px;
@@ -166,7 +163,7 @@ a {
     .whatsup{
       color: white;
       background-color: black;
-      padding: 30px 300px;
+      padding: 30px 275px;
       border: 2px solid black;
     border-radius: 25px;
 }
@@ -332,3 +329,50 @@ footer {
  
  .error-message {
   color: crimson; }
+
+  .btn-start-project {
+    width:  200px;
+    height: 50px;
+    padding: 13px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .btn-start-project:hover{
+    text-decoration: none;
+    background-color: black;
+    color: white;
+}
+
+  .start-yours{
+    width: 200px;
+    background-color: white;
+    color: black;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 5px;
+
+  }
+
+  .text-pro-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 60px;
+    text-align: center;
+  }
+
+  .project-info h3 {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .project-info p {
+    padding: 10px 0;
+  }
+
+  .days-before-end{
+    background-color: black;
+    color: white;
+  }
