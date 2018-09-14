@@ -8,7 +8,7 @@ const moment = require("moment");
 const projectSchema = new Schema({
   // document structure & rules
   projectName: { type: String, required: true },
-  shortDescription: { type: String, required: true, maxlength : 20 },
+  shortDescription: { type: String, required: true, maxlength : 100 },
   longDescription: { type: String, required: true },
   pictureUrl: {type: String, required: true},
   moneyExpected: { type: Number, required: true },
