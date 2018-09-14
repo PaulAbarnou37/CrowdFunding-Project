@@ -1,0 +1,63 @@
+<div class="all-form-page">
+
+<div class="startproject-form">
+
+<h2 class="start-pro-text">Edit your project information</h2>
+
+<form action ="process-project" method = "POST">
+<label>
+Project Name : 
+<br/>
+<input class="field-length" type="text" name="projectName" value="{{projectEdit.projectName}}" />
+</label>
+<br/>
+
+<label>
+Short Description (100 characters max):
+<br/>
+<input class="field-length" type="text" name="shortDescription" maxlength="100" value="{{projectEdit.shortDescription}}" />
+</label>
+<br/>
+
+<label>
+Long Description:
+<br/>
+<input class="field-length long-description" name="longDescription" value="{{projectEdit.longDescription}}" />
+</textarea>
+</label>
+<br/>
+
+<label>
+  Give your project a picture:
+  <br/>
+  <input class="field-length" type="url" name="pictureUrl" value="{{projectEdit.pictureUrl}}"/>
+</label>
+<br/>
+
+<label>
+  What is the category of your project:
+  <br/>
+  <input class="field-length" type="text" name="category" value="{{projectEdit.category}}"/>
+</label>
+<br/>
+
+<label>
+  What is the end date of your project?
+  <br/>
+  <input class="field-length" type="date" name="endDate" value="{{projectEdit.endDate}}"/>
+</label>
+<br/>
+
+<label>
+  How much money you expect to gather?
+  <br/>
+  <input class="field-length" type="number" name="moneyExpected" value="{{projectEdit.moneyExpected}}"/>
+</label>
+<br/>
+
+
+  <button class="create-my-btn">Create My Project</button>
+</form>
+<br/>
+</div>
+</div>

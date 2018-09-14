@@ -139,16 +139,14 @@ a {
  
 
     .login-form {
-      padding: 150px 200px;
-      display:flex;
-      justify-content: center;
+      padding: 150px 600px;
     }
 
     .login-content{
-      height: auto;
-      width: 300px;
-      display: flex;
-      justify-content: center;
+      text-align: center;
+      padding: 50px;
+      border: 2px solid black;
+      border-radius: 5px;
     }
 
     label {
@@ -218,11 +216,6 @@ text-decoration: none;
 }
 
 .startproject-btn button:hover {
-  background-color: black;
-  color: white;
-}
-
-.startproject-btn button a:hover {
   background-color: black;
   color: white;
 }
@@ -303,7 +296,7 @@ footer {
 }
 
 .project-info {
-  margin-top: 120px;
+  margin-top: 100px;
   margin-left: 30px;
   padding: 20px 30px;
   border: 2px solid black;
@@ -384,11 +377,45 @@ footer {
     padding: 20px 0;
   }
 
-  .project-info p {
-    padding: 10px 0;
+  .text-info-box-grey {
+    font-family: 'Crimson Text', serif;
+    color: grey;
+  }
+
+  .text-comment-box-grey {
+    font-family: 'Crimson Text', serif;
+    color: grey;
+    margin: 30px 0px ;
   }
 
   .days-before-end{
     background-color: black;
     color: white;
+  }
+
+  .project-description {
+    width: 500px;
+    height: auto;
+  }
+
+  .comment-box { 
+    width: 800px;
+    margin: 0px auto;
+  }
+
+  .comment-box h1 {
+    text-align: center;
+  }
+
+  .comment-box li { 
+    list-style-type : none;
+  }
+
+  .login-button {
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
   }

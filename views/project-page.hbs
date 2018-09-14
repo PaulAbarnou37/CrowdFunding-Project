@@ -1,22 +1,33 @@
 <div class="project-page-all">
 
 <div class="content-project-page">
+    {{> flash_messages}} 
 <h2>{{projectData.projectName}}</h2>
-<p style="font-style: italic">Created by </p>
+{{#if isPostAuthor}}
+<a href="/projects-list/{{projectData._id}}/edit-your-project">Edit your project</a>
+{{/if}}
 <p>{{projectData.shortDescription}}</p>
 <img src="{{projectData.pictureUrl}}" alt="">
+<div class="project-description">
 <p>{{projectData.longDescription}}</p>
 </div>
+</div>
+
 
 <div class="project-info">
  
 <h3>More Information</h3>
 
-<p> Still <span style="text-decoration:underline">{{timeLeft}} days</span> before the end date!</p>
+<span>{{creatorName}}</span>
+<p class="text-info-box-grey">is the creator of the project</p>
+
+<span>{{timeLeft}}</span>
+<p class="text-info-box-grey"> days remaining before the end date!</p>
+
+<span>{{contributors}}</span>
+<p class="text-info-box-grey">contributions so far!</p>
 
 <p>${{projectData.moneyReceived}} out of ${{projectData.moneyExpected}}</p>
-
-<p>{{contributors}} contributions so far!</p>
 
 <div class="progress">
   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{moneyLeft}}" aria-valuemin="0" aria-valuemax="100" style="width: {{moneyLeft}}%"></div>
@@ -33,22 +44,26 @@ Fuel This Project:
 <button class="btn-contribute">Contribute</button>
 
 <br/>
-{{> flash_messages}} 
 </form>
 </div>
 
 </div>
 
+<hr>
+
 {{!-- SHOW THE COMMENT --}}
 
+
+<div class="comment-box">
+  <h1>Comments</h1>
 <ul>
 {{#each allComments}}
-  <li><h5>{{this.commentWriter.[0].firstName}}</h5></li>
-  <li><p>{{this.commentWriter.[0].lastName}}</p></li>
-  <li><p>{{this.commentContent}}</p></li>
-  
+  <li>  By </span> {{this.commentWriter.[0].firstName}} {{this.commentWriter.[0].lastName}}</li>
+  <li class="on-date-comment">On {{this.createdAt}}</li>
+  <li class="text-comment-box-grey">{{this.commentContent}}</li>
 {{/each}}
 </ul>
+</div>
 
 
 
@@ -70,7 +85,7 @@ Fuel This Project:
   <button>Comment</button>
 
   <br/>
-  {{> flash_messages}} 
+
 </form>
 
 

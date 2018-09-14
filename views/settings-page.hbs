@@ -1,25 +1,28 @@
-<div>
+<div class="login-form">
+  <div class="login-content">
+  
+  <div>
+  <h2>Log In</h2>
+  
 
-<h2>User Settings</h2>
+{{> flash_messages}}
 
-<form action="/process-settings" method="POST">
-  <label>
-    Full name:
-    <br />
-    <input type="text" name="fullName" value="{{currentUser.fullName}}"
-        placeholder="Leia Organa" />
-  </label>
-  <br />
 
-  <label>
-    Email:
-    <br />
-    <input type="email" name="email" value="{{currentUser.email}}"
-        placeholder="leia@resistance.com" />
-  </label>
-  <br />
+<form action="/process-login" method="POST">
+<label>
+Email:
+<input type="email" name="email" placeholder="blah@blah.blah" />
+</label>
+<br/>
 
-  <button>Save Settings</button>
+<label>
+  Password:
+  <input type="password" name="originalPassword" placeholder="password"/>
+</label>
+<br/>
+
+<button>Log In</button>
 </form>
-
+</div>
+</div>
 </div>

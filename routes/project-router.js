@@ -35,8 +35,6 @@ let owner = req.user._id;
 });
 
 
-
-
 router.get("/projects-list", (req, res, next) => {
   Project.find()
   .then(projectResults => {
@@ -49,7 +47,17 @@ router.get("/projects-list", (req, res, next) => {
 router.get("/projects-list/:projectid", (request,response,next)=>{
   const { projectid } = request.params; // params pour recup ce quil ya dans l'url
   Project.findOne({_id : { $eq: projectid } })
+      .populate('owner')
       .then(data => {
+        let isPostAuthor
+        if (request.user){
+          isPostAuthor = data.owner._id.toString() === request.user._id.toString()
+        } else {
+          isPostAuthor = false
+        }
+        response.locals.creatorName = data.owner.firstName + " " + data.owner.lastName;
+        response.locals.isPostAuthor = isPostAuthor;
+        
         // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API'
         response.locals.projectData = data;
         const contributors = data.contributors.length;
@@ -63,10 +71,11 @@ router.get("/projects-list/:projectid", (request,response,next)=>{
         if (data.moneyReceived > data.moneyExpected){
           data.moneyReceived = data.moneyExpected
         };
+        
         Comment.find({projectId: {$eq: projectid}})
+        .sort({createdAt: -1})
         .populate("commentWriter")
         .then(allcommentsInfo =>{
-          
           response.locals.allComments = allcommentsInfo;
           // response.send(allcommentsInfo)
         response.render("project-page.hbs");
@@ -82,7 +91,9 @@ router.get("/projects-list/:projectid", (request,response,next)=>{
 });
 
 router.post("/process-contribution", (req, res, next) => {
-  // res.send(req.body);
+  if(!req.user){
+    res.render("auth-views/login.hbs");
+  } else {
   let {amount, projectId} = req.body;
   amount = Number(amount);
   const userId = req.user._id ;
@@ -104,7 +115,7 @@ router.post("/process-contribution", (req, res, next) => {
       // ----> 'HERE WE CAPTURE THE ERROR'
       console.log('There is a Failure', err)
     });
-});
+}});
 
 router.post("/process-comment", (req, res, next) => {
   const {commentContent, projectId} = req.body;
@@ -128,33 +139,39 @@ router.post("/process-comment", (req, res, next) => {
       })
     })
     .catch(err => next(err));
-    });
+  });
 
 
 
-    router.get("/edit-project", (req, res, next) => {
+    router.get("/projects-list/:projectid/edit-your-project", (req, res, next) => {
       if (!req.user) {
         req.flash("error", "You have to be logged to visit User Settings! 😤");
     
         res.redirect("/login");
       }
       else {
-        res.render("settings-page.hbs");
-      }
+        const {projectid} = req.params;
+        Project.findOne({_id : { $eq: projectid } })
+          .then(data => {
+            res.locals.projectEdit = data;
+        res.render("edit-project.hbs");
+      })
+    }
     });
     
-    router.post("/process-settings", (req, res, next) => {
-      const { fullName, email } = req.body;
-    
-      User.findByIdAndUpdate(
-        req.user._id, // get the logged in user's ID using Passport's "req.user"
-        { $set: { fullName, email } },
+
+    router.post("/projects-list/:projectid/process-project", (req, res, next) => {
+      const {projectid} = req.params;
+      const {projectName, shortDescription, longDescription, pictureUrl, category, endDate, moneyExpected} = req.body;
+      Project.findByIdAndUpdate(
+        projectid, // get the logged in user's ID using Passport's "req.user"
+        { $set: { projectName, shortDescription, longDescription, pictureUrl, category, endDate, moneyExpected } },
         { runValidators: true },
       )
         .then(userDoc => {
           // save a flash message to display in the HOME page
-          req.flash("success", "Settings saved! 😏");
-          res.redirect("/");
+          req.flash("success", "Your project has been edited successfully");
+          res.redirect(`/projects-list/${projectid}`);
         })
         .catch(err => next(err));
     });
