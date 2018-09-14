@@ -6,7 +6,7 @@
 {{#if isPostAuthor}}
 <a href="/projects-list/{{projectData._id}}/edit-your-project">Edit your project</a>
 {{/if}}
-<p>{{projectData.shortDescription}}</p>
+{{!-- <p>{{projectData.shortDescription}}</p> --}}
 <img src="{{projectData.pictureUrl}}" alt="">
 <div class="project-description">
 <p>{{projectData.longDescription}}</p>
@@ -63,16 +63,6 @@ Fuel This Project:
   <li class="text-comment-box-grey">{{this.commentContent}}</li>
 {{/each}}
 </ul>
-</div>
-
-
-
-{{!-- SHOW THE COMMENT --}}
-
-
-
-
-
 
 <form action="/process-comment" method="POST">
   <label>
@@ -87,6 +77,18 @@ Fuel This Project:
   <br/>
 
 </form>
+</div>
+
+
+
+{{!-- SHOW THE COMMENT --}}
+
+
+
+
+
+
+
 
 
 
