@@ -68,7 +68,6 @@ router.get("/projects-list/:projectid", (request,response,next)=>{
         .then(allcommentsInfo =>{
           
           response.locals.allComments = allcommentsInfo;
-          console.log(allcommentsInfo);
           // response.send(allcommentsInfo)
         response.render("project-page.hbs");
         })
@@ -130,6 +129,37 @@ router.post("/process-comment", (req, res, next) => {
     })
     .catch(err => next(err));
     });
+
+
+
+    router.get("/edit-project", (req, res, next) => {
+      if (!req.user) {
+        req.flash("error", "You have to be logged to visit User Settings! 😤");
+    
+        res.redirect("/login");
+      }
+      else {
+        res.render("settings-page.hbs");
+      }
+    });
+    
+    router.post("/process-settings", (req, res, next) => {
+      const { fullName, email } = req.body;
+    
+      User.findByIdAndUpdate(
+        req.user._id, // get the logged in user's ID using Passport's "req.user"
+        { $set: { fullName, email } },
+        { runValidators: true },
+      )
+        .then(userDoc => {
+          // save a flash message to display in the HOME page
+          req.flash("success", "Settings saved! 😏");
+          res.redirect("/");
+        })
+        .catch(err => next(err));
+    });
+
+
 
 
 module.exports = router;

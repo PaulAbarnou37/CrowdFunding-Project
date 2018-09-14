@@ -165,7 +165,18 @@ h5 {
 .startproject-btn button {
   height: 50px;
   width: 230px;
-  text-align: center; }
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  color: black; }
+
+.startproject-btn button:hover {
+  background-color: black;
+  color: white; }
+
+.startproject-btn button a:hover {
+  background-color: black;
+  color: white; }
 
 .field-length {
   width: 300px; }

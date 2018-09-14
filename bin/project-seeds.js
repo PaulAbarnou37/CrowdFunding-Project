@@ -13,6 +13,42 @@ mongoose
 
   const projectData = [
     {
+
+      projectName: { type: String, required: true },
+      shortDescription: { type: String, required: true, maxlength : 20 },
+      longDescription: { type: String, required: true },
+      pictureUrl: {type: String, required: true},
+      moneyExpected: { type: Number, required: true },
+      moneyReceived: { type: Number, default: 0, },
+      endDate: { type: Date, required: true },
+      comments: { type: [String]},
+      category: { type: [String]},
+      contributors: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: "User", 
+          required: true,
+        }
+      ],
+      owner: {
+        type: Schema.Types.ObjectId,
+        ref: "User", 
+        required: true,
+      },
+    }, {
+      timestamps: true
+
+
+
+
+
+
+
+
+
+
+
+
       name: "The Chicken Killer",
       shortDescription: "This app is supposed to kill chicken",
       longDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
