@@ -4,7 +4,9 @@
     {{> flash_messages}} 
 <h2>{{projectData.projectName}}</h2>
 {{#if isPostAuthor}}
-<a href="/projects-list/{{projectData._id}}/edit-your-project">Edit your project</a>
+<div class="edit-your-project">
+<a  href="/projects-list/{{projectData._id}}/edit-your-project">Edit your project</a>
+</div>
 {{/if}}
 <br/>
 {{!-- <p>{{projectData.shortDescription}}</p> --}}
@@ -57,6 +59,7 @@ Fuel This Project:
 
 <div class="comment-box">
   <h1>Comments</h1>
+
 <ul>
 {{#each allComments}}
   <li>  By </span> {{this.commentWriter.[0].firstName}} {{this.commentWriter.[0].lastName}}</li>
@@ -65,10 +68,12 @@ Fuel This Project:
 {{/each}}
 </ul>
 
+<div class="form-comment">
 <form action="/process-comment" method="POST">
   <label>
    Comment:
-    <input type="String" name="commentContent"/>
+   <br/>
+    <input style="width:200px, height:30px" type="String" name="commentContent"/>
   </label>
   <input type="hidden" name="projectId" value="{{projectData._id}}">
   <br/>
@@ -78,6 +83,7 @@ Fuel This Project:
   <br/>
 
 </form>
+</div>
 </div>
 
 
